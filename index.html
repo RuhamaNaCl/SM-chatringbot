@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Firebase Chat App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <aside class="sidebar">
+    <h2>My Chat</h2>
+    <div id="authArea">
+      <input id="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+      <div class="authBtns">
+        <button id="signupBtn">Sign Up</button>
+        <button id="loginBtn">Log In</button>
+      </div>
+      <button id="logoutBtn" class="hidden">Log Out</button>
+      <p id="userInfo"></p>
+    </div>
+    <hr>
+    <div class="rooms">
+      <input id="newRoomName" placeholder="New room name" />
+      <button id="createRoomBtn">Create Room</button>
+      <ul id="roomsList"></ul>
+    </div>
+  </aside>
+
+  <main class="chatMain">
+    <header id="roomHeader">Select a room</header>
+    <div id="messages" class="messages"></div>
+    <form id="messageForm" class="messageForm hidden">
+      <input id="messageInput" placeholder="Write a message..." autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </main>
+</div>
+
+<!-- Firebase Scripts -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+
+<script>
+  // Firebase Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyDkmojFmCOTO7u4m53Ne4zsn6_PVcIWZTE",
+    authDomain: "sm-chat-e5292.firebaseapp.com",
+    projectId: "sm-chat-e5292",
+    storageBucket: "sm-chat-e5292.firebasestorage.app",
+    messagingSenderId: "641434086282",
+    appId: "1:641434086282:web:3ed1da3cdc9b71308eb673"
+  };
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
