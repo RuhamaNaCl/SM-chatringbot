@@ -1,0 +1,214 @@
+/* --- Global & Body Styles --- */
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e1e2f;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #f0f0f0;
+}
+
+/* --- Main Layout --- */
+.main-layout {
+    width: 95%;
+    max-width: 1100px;
+    height: 90vh;
+    background: #27293d;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid #3c3f58;
+}
+
+/* Small Screen */
+@media (max-width: 768px) {
+    .main-layout {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+/* --- Signature --- */
+#signature-title {
+    background: #ff5e3a;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid #4a4a6e;
+}
+
+/* --- Header --- */
+.main-header {
+    background: linear-gradient(135deg, #4c44e9 0%, #a83dcc 100%);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #633391;
+}
+
+.main-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+#my-uid {
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+/* --- Name Settings Bar --- */
+.name-settings-bar {
+    padding: 10px 20px;
+    background: #3c3f58;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #4a4a6e;
+}
+
+.name-settings-bar label { white-space: nowrap; }
+.name-settings-bar input[type="text"] {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background: #27293d;
+    color: #f0f0f0;
+    flex-grow: 1;
+}
+.name-settings-bar button {
+    padding: 8px 15px;
+    background: #ff5e3a;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+/* --- Chat Wrapper --- */
+.chat-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* --- Inbox Sidebar --- */
+.inbox-list {
+    width: 280px;
+    min-width: 280px;
+    border-right: 1px solid #3c3f58;
+    background: #2e3047;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+.inbox-list h3 {
+    margin: 0;
+    padding: 15px;
+    color: #a83dcc;
+}
+
+/* --- Chat Container --- */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Messages */
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #222436;
+}
+
+/* Message Bubble */
+.message {
+    padding: 12px 18px;
+    border-radius: 18px;
+    max-width: 65%;
+    font-size: 0.95em;
+}
+.my-msg {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #4c44e9 0%, #a83dcc 100%);
+    color: white;
+}
+.other-msg {
+    align-self: flex-start;
+    background: #3c3f58;
+    color: #f0f0f0;
+}
+
+.msg-img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Input Area */
+.input-area {
+    padding: 15px 20px;
+    border-top: 1px solid #3c3f58;
+    display: flex;
+    gap: 10px;
+    background: #27293d;
+}
+input[type="text"] {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #3c3f58;
+    color: #f0f0f0;
+}
+
+/* File Button */
+#file-btn {
+    background: #3c3f58;
+    color: #a83dcc;
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+
+    /* Sidebar hidden by default */
+    .inbox-list {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+        z-index: 100;
+    }
+
+    /* When active add class .open */
+    .inbox-list.open {
+        transform: translateX(0);
+    }
+
+    .chat-wrapper {
+        flex-direction: column;
+    }
+
+    .messages {
+        padding: 10px;
+    }
+
+    .name-settings-bar {
+        flex-wrap: wrap;
+    }
+  }
