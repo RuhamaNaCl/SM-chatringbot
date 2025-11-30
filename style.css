@@ -1,0 +1,122 @@
+/* --- Global & Body Styles (Fix for 100% height on mobile) --- */
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e1e2f;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* পুরো স্ক্রিন হাইট ব্যবহার করা */
+    min-height: 100vh; 
+    color: #f0f0f0;
+}
+
+/* --- Main Layout --- */
+.main-layout {
+    width: 95%;
+    max-width: 1100px;
+    /* মোবাইল ডিভাইসে পুরোপুরি হাইট ব্যবহার করবে */
+    height: 90vh; 
+    background: #27293d; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid #3c3f58;
+}
+/* ছোট স্ক্রিনে 100% জায়গা নিশ্চিত করা */
+@media (max-width: 768px) {
+    .main-layout {
+        width: 100%;
+        height: 100vh; /* মোবাইল ডিভাইসে পুরো স্ক্রিন */
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+
+/* --- Header & Signature --- (আগের মতোই, কোনো সমস্যা নেই) */
+#signature-title {
+    background: #ff5e3a; 
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    border-top: 1px solid #4a4a6e;
+}
+.main-header {
+    background: linear-gradient(135deg, #4c44e9 0%, #a83dcc 100%);
+    color: white;
+    padding: 15px 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #633391;
+}
+/* ... (বাকি header style) ... */
+
+/* --- Name Settings Bar Style --- */
+.name-settings-bar {
+    padding: 10px 20px;
+    background: #3c3f58; 
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #4a4a6e;
+    color: #f0f0f0;
+    font-size: 0.9em;
+}
+/* ... (বাকি name-settings-bar style) ... */
+
+
+/* --- Chat Wrapper & Layout --- */
+.chat-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative; /* মোবাইল স্ক্রিনের জন্য জরুরি */
+}
+
+/* --- Inbox Sidebar (Left Panel) --- */
+.inbox-list {
+    min-width: 280px;
+    width: 280px; /* ডেস্কটপে ফিক্সড প্রস্থ */
+    border-right: 1px solid #3c3f58;
+    padding: 0;
+    overflow-y: auto;
+    background: #2e3047;
+}
+
+/* --- Mobile Inbox List Fix --- */
+@media (max-width: 768px) {
+    .inbox-list {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        z-index: 100;
+        /* প্রাথমিক অবস্থায় চ্যাট উইন্ডো দেখাবে, তাই ইনবক্স লুকানো থাকবে */
+        /* যদি আপনি চ্যাট শুরু করার আগে ইনবক্স দেখতে চান, তবে এই ট্রান্সফর্মটি মুছে দিতে হবে */
+        /* কিন্তু DM অ্যাপে সাধারণত চ্যাট উইন্ডো প্রাইমারি থাকে। */
+    }
+}
+
+/* --- Chat Container (Right Panel) --- */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* ছোট স্ক্রিনে পুরো জায়গা নেবে */
+    width: 100%; 
+}
+/* ... (বাকি chat-container styles) ... */
+
+/* --- Mobile View - Main Control --- */
+@media (max-width: 768px) {
+    /* যদি চ্যাট উইন্ডো খোলা থাকে, তবে ইনবক্স পেছনে চলে যাবে (এটাই DM অ্যাপের লজিক) */
+    .inbox-list {
+        transform: translateX(0); /* Uncomment এই লাইন যদি আপনি প্রথমে ইনবক্স দেখাতে চান */
+    }
+}
