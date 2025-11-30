@@ -297,3 +297,13 @@ sendBtn.addEventListener('click', async () => {
     sendBtn.innerText = "Send";
     sendBtn.disabled = false;
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const inboxList = document.querySelector(".inbox-list");
+    const menuBtn = document.getElementById("menu-btn");
+
+    if (menuBtn && inboxList) {
+        menuBtn.addEventListener("click", () => {
+            inboxList.classList.toggle("open");
+        });
+    }
+});
