@@ -217,5 +217,31 @@ button:disabled {
     color: #a83dcc; 
     align-self: center;
            }
-               
+
+/* --- Name Settings Bar Style --- */
+.name-settings-bar {
+    padding: 10px 20px;
+    background: #3c3f58; /* Dark grey background */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #4a4a6e;
+    color: #f0f0f0;
+    font-size: 0.9em;
+}
+.name-settings-bar input[type="text"] {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background: #27293d;
+    color: #f0f0f0;
+    flex-grow: 1;
+}
+.name-settings-bar button {
+    padding: 8px 15px;
+    background: #ff5e3a; /* Accent color for save button */
+    border-radius: 5px;
+    font-weight: 500;
+    }
+
            
