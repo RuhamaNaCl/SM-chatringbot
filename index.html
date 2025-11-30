@@ -3,28 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Private Group Chat</title>
+    <title>S.M. RUHAMA's Secret DM Chat</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="chat-container">
-        <header>
-            <h2>Secret Adda Zone</h2>
+    <div class="main-layout">
+        
+        <div id="signature-title">S.M. RUHAMA'S PRIVATE CHAT</div>
+
+        <header class="main-header">
+            <h2>Secret DM Zone</h2>
             <p>My ID: <span id="my-uid">Connecting...</span></p>
         </header>
-        
-        <div id="messages-area" class="messages">
+
+        <div class="chat-wrapper">
+            <div id="inbox-list" class="inbox-list">
+                <h3>Users</h3>
+                <div id="user-list">
+                    <p class="loading-text">Loading Users...</p>
+                </div>
             </div>
 
-        <div class="input-area">
-            <input type="text" id="msg-input" placeholder="Type a message...">
-            <input type="file" id="file-input" style="display: none;">
-            <button id="file-btn">📎</button>
-            <button id="send-btn">Send</button>
+            <div class="chat-container">
+                <div id="current-chat-header" class="chat-header">
+                    Select a user to start chatting
+                </div>
+                
+                <div id="messages-area" class="messages">
+                    <p class="center-text" id="initial-message">Please select a user from the left to start a direct message.</p>
+                    </div>
+
+                <div class="input-area" id="main-input-area" style="display: none;">
+                    <input type="text" id="msg-input" placeholder="Type a message...">
+                    <input type="file" id="file-input" style="display: none;">
+                    <button id="file-btn">📎</button>
+                    <button id="send-btn">Send</button>
+                </div>
+                <div id="file-name-display"></div>
+            </div>
         </div>
-        <div id="file-name-display"></div>
     </div>
 
     <script type="module" src="script.js"></script>
 </body>
 </html>
+
